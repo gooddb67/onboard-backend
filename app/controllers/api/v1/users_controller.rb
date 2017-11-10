@@ -15,7 +15,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(name: params[:name], password: params[:password], admin: params[:admin], avatar: params[:avatar], email: params[:email], alum: params[:alum])
+    @user = User.create(name: params[:name], password: params[:password], admin: params[:admin], avatar: params[:avatar], email: params[:email])
 
     @user.experiences.create(company: params[:company] , title: params[:title], start_date: params[:startdate], end_date: params[:enddate], current: params[:current])
     if @user.save
