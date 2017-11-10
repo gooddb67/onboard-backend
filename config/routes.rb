@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :users, only: [:create, :show, :index, :update] do
-        resources :rooms, only:[:create]
+        resources :rooms, only:[:create, :destroy, :update]
       end
       resources :questions, only: [:index, :create, :update]
       resources :posts, only: [:create, :update, :index]
