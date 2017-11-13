@@ -18,8 +18,8 @@ company2 = Company.create(name: "Flatiron", url: "flatiron@flatiron.com", avatar
 company_room1 = CompanyRoom.create(room_id: flatiron_room.id, company_id: company1.id)
 company_room2 = CompanyRoom.create(room_id: flatiron_room.id, company_id: company2.id)
 
-interviewq1 = Question.create(question: "what's the interview like at FB", company_id: 1)
-interviewq2 = Question.create(question: "what's the interview like at Flatiron", company_id: 2)
+interviewq1 = Question.create(question: "what's the interview like at FB", company_id: 1, room_id: 1)
+interviewq2 = Question.create(question: "what's the interview like at Flatiron", company_id: 2, room_id: 1)
 
 answer1 = Answer.create(answer: "easy peasy", user_id: 1, vote: 0, question_id: 1)
 answer12 = Answer.create(answer: "ok", user_id: 2, vote: 0, question_id: 1)
