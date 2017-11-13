@@ -6,6 +6,7 @@ Rails.application.routes.draw do
         resources :rooms, only:[:create, :destroy, :update]
       end
       resources :questions, only: [:index, :create, :update]
+      resources :answers, only: [:create, :update]
       resources :posts, only: [:create, :update, :index]
       resources :rooms, only:[:index] do
         resources :companies, only:[:index, :create, :show, :update] do
