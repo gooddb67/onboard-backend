@@ -15,6 +15,8 @@ dave_exp = Experience.create(company: "Facebook", start_date: "2013-01-15", end_
 christina_exp = Experience.create(company: "Flatiron", start_date: "2014-06-15", end_date: "2017-01-12", title:"CTO", description:"Lead a team.", user_id: 2)
 company1 = Company.create(name: "Facebook", url: "fb@fb.com", avatar: "fb avatar", description: "hello facebook")
 company2 = Company.create(name: "Flatiron", url: "flatiron@flatiron.com", avatar: "flatiron avatar", description: "hello flatiron")
+company_room1 = CompanyRoom.create(room_id: flatiron_room.id, company_id: company1.id)
+company_room2 = CompanyRoom.create(room_id: flatiron_room.id, company_id: company2.id)
 
 interviewq1 = Question.create(question: "what's the interview like at FB", company_id: 1)
 interviewq2 = Question.create(question: "what's the interview like at Flatiron", company_id: 2)
