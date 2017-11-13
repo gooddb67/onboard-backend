@@ -1,5 +1,14 @@
 class Api::V1::RoomsController < ApplicationController
 
+  def show
+    @room = Room.find(params[:id])
+    if @room
+      render json: @room
+    else
+      render json: {errors: @room.errors.full_messages}
+    end
+  end
+
   def index
     @rooms = Room.all
     render json: @rooms
