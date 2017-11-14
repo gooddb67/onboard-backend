@@ -1,5 +1,7 @@
 class Api::V1::UsersController < ApplicationController
 
+  skip_before_action :authorized, only: [:create]
+
   def index
     @users = User.all
     render json: @users
@@ -19,9 +21,11 @@ class Api::V1::UsersController < ApplicationController
 
     @user.experiences.create(company: params[:company] , title: params[:title], start_date: params[:startdate], end_date: params[:enddate], current: params[:current])
     if @user.save
-      render json: @user
+      payload = {user_id: @user.id}
+      token = JWT.encode(payload, "flatiron")
+      render json: {user:@user, jwt: token, id: @user.id }
     else
-      render json: {errors: @user.errors.full_messages}
+      render json: { error: "signup failed"}
     end
   end
 
