@@ -17,8 +17,6 @@ class Api::V1::CompaniesController < ApplicationController
     end
   end
 
-  def update
-  end
 
 
 end

@@ -17,7 +17,4 @@ class Api::V1::QuestionsController < ApplicationController
     end
   end
 
-  def update
-
-  end
 end
