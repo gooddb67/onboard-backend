@@ -4,12 +4,5 @@ class Api::V1::PostsController < ApplicationController
     @posts = Post.all
     render json: @posts
   end
-
-  def create
-
-  end
-
-  def update
-
-  end
+  
 end
